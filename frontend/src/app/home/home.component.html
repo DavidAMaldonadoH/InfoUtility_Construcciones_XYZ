@@ -1,0 +1,16 @@
+<section class="container-fluid my-4">
+    <h1>Proyectos</h1>
+    <div class="d-flex justify-content-between flex-wrap gx-4">
+    <div class="card my-2" style="width: 18rem;" *ngFor="let project of projects">
+            <div class="card-body">
+                <h5 class="card-title">{{project.name}}</h5>
+                <p class="card-text">Tipo: {{project.projectType?.name}}</p>
+                <p class="card-text">Estado: {{project.projectState?.name}}</p>
+                <p class="card-text">Responsable: {{project.engineer?.firstName}}
+                    {{project.engineer?.lastName}}</p>
+                <p class="card-text">Costo Estimado: {{project.cost}}</p>
+                <button class="btn btn-primary" (click)="goToProject(project.id)">Editar</button>
+            </div>
+        </div>
+    </div>
+</section>

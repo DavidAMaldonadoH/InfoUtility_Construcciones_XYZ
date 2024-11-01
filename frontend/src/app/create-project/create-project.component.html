@@ -1,0 +1,37 @@
+<section class="container-fluid my-4">
+    <form class="mx-auto" [formGroup]="createProjectForm" method="post" (submit)="submitProject()">
+        <h1>Crear Proyecto</h1>
+        <div class="mb-3">
+            <label class="form-label" for="project-name">Nombre:</label>
+            <input class="form-control" type="text" id="project-name" name="project-name" required
+                formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="project-location">Ubicación:</label>
+            <input class="form-control" type="text" id="project-location" name="project-location" required
+                formControlName="location">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="project-type">Tipo:</label>
+            <select class="custom-select form-control" name="project-type" id="project-type" formControlName="type">
+                <option *ngFor="let type of projectTypes" [value]="type.id">{{type.name}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="project-estimated-cost">Costo estimado:</label>
+            <input class="form-control" type="number" id="project-estimated-cost" name="project-estimated-cost" required
+                formControlName="cost">
+        </div>
+        <div class=" mb-3">
+            <label class="form-label" for="project-responsible">Ingeniero responsable:</label>
+            <select class="custom-select form-control" name="project-responsible" id="project-responsible"
+                formControlName="engineerId">
+                <option *ngFor="let engineer of engineers" [value]="engineer.id">{{engineer.firstName}}
+                    {{engineer.lastName}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">
+            Crear
+        </button>
+    </form>
+</section>

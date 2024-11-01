@@ -1,0 +1,40 @@
+<section class="container-fluid my-4">
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let state of projectsByStates; let index = index">
+                <th scope="row">{{index}}</th>
+                <td>{{state.state}}</td>
+                <td>{{state.count}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <table class="table table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Costos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let type of projectsByTypes; let index = index">
+                <th scope="row">{{index}}</th>
+                <td>{{type.type}}</td>
+                <td>{{type.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-outline-primary">
+        Realizar Cuadre
+    </button>
+</section>

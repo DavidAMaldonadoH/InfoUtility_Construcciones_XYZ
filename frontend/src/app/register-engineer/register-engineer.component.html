@@ -1,0 +1,18 @@
+<section class="container-fluid my-4">
+    <form [formGroup]="registerEngineerForm" method="post" (submit)="submitEngineer()">
+        <h1>Registrar Ingeniero</h1>
+        <div class="form-floating mb-3">
+            <label class="form-label" for="engineer-first-name">Nombre:</label>
+            <input class="form-control" type="text" id="engineer-name" name="engineer-first-name"
+                placeholder="Nombre del Ingeniero" required formControlName="firstName">
+        </div>
+        <div class="form-floating mb-3">
+            <label class="form-label" for="engineer-lastname">Apellido:</label>
+            <input class="form-control" type="text" id="engineer-lastname" name="engineer-lastname"
+                placeholder="Apellido del Ingeniero" required formControlName="lastName">
+        </div>
+        <button type="submit" class="btn btn-outline-primary">
+            Registrar
+        </button>
+    </form>
+</section>

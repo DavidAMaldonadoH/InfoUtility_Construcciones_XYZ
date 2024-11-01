@@ -1,4 +1,4 @@
-<section>
+<section class="container-fluid my-4">
     <h1>Actualizar Proyecto</h1>
     <h2>{{project?.name}}</h2>
     <p>{{project?.location}}</p>
@@ -12,7 +12,7 @@
 
         <div class="mb-3">
             <label class="form-label" for="project-state">Tipo:</label>
-            <select class="form-select" name="project-state" id="project-state" formControlName="state">
+            <select class="custom-select form-control" name="project-state" id="project-state" formControlName="state">
                 <option *ngFor="let state of projectStates" [value]="state.id">
                     {{state.name}}</option>
             </select>

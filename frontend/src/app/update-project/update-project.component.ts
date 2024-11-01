@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Project } from '../project';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ProjectState } from '../projectstate';
 
 @Component({
@@ -22,14 +22,8 @@ export class UpdateProjectComponent implements OnInit {
     cost: new FormControl(0),
   });
 
-  constructor(private route: ActivatedRoute, private formBuilder: FormBuilder) {
-    this.updateProjectForm = this.formBuilder.group({
-      id: [0],
-      state: ['', Validators.required, Validators.min(1)],
-      cost: [0, Validators.required, Validators.min(0)],
-    });
+  constructor(private route: ActivatedRoute) { }
 
-  }
   async ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.project = await this.getProject();

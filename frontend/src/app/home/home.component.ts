@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     this.projects = await this.getProjects()
-    console.log(this.projects)
   }
 
   async getProjects() {

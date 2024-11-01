@@ -6,7 +6,7 @@ public class ApiResponseService(ConstructionContext context) : Controller
 {
     protected readonly ConstructionContext _context = context;
 
-    protected IActionResult CreateResult(int status, string message, object? result)
+    protected IActionResult CreateResult(int status, string message, object result)
     {
         var res = new ApiResponse(status, message, result, Request.Path);
         if (Request.Path.Value == null)
@@ -49,7 +49,7 @@ public class ApiResponseService(ConstructionContext context) : Controller
             : CreateResult(response.Status, response.Message, response.Result);
     }
 
-    protected ApiResponse CreateApiResponse(int status, string message = "", object? result = null)
+    protected ApiResponse CreateApiResponse(int status, string message = "", object result = null)
     {
         return new ApiResponse(status, message, result, Request.Path);
     }

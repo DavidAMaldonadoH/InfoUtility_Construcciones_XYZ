@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register-engineer',
@@ -14,13 +14,6 @@ export class RegisterEngineerComponent {
     firstName: new FormControl(''),
     lastName: new FormControl(''),
   });
-
-  constructor(private formBuilder: FormBuilder) {
-    this.registerEngineerForm = this.formBuilder.group({
-      firstName: ['', Validators.required, Validators.minLength(2)],
-      lastName: ['', Validators.required, Validators.minLength(2)]
-    });
-  }
 
   async submitEngineer() {
     if (this.registerEngineerForm.invalid) {

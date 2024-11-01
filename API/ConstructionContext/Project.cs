@@ -11,8 +11,8 @@ public partial class Project
   public string Location { get; set; }
   public decimal Cost { get; set; }
   public int State { get; set; }
-
   public int EngineerId { get; set; }
+  public bool IsArchived { get; set; }
   public virtual ProjectType ProjectType { get; set; }
   public virtual ProjectState ProjectState { get; set; }
 

@@ -40,4 +40,19 @@ export class ReportComponent implements OnInit {
       return []
     }
   }
+
+  async archiveProjects() {
+    const response = await fetch('http://localhost:4000/api/project/archive', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const data = await response.json()
+    if (response.ok) {
+      alert(data.message)
+    } else {
+      alert(data.message)
+    }
+  }
 }

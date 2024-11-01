@@ -10,6 +10,8 @@ public partial class ConstructionContext : DbContext
   public virtual DbSet<ProjectState> ProjectStates { get; set; }
   public virtual DbSet<Engineer> Engineers { get; set; }
 
+  public virtual DbSet<ClosingLog> ClosingLogs { get; set; }
+
   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
   {
     optionsBuilder.UseSqlServer(@"Server=localhost;Database=construcciones_xyz;ConnectRetryCount=0;User Id=sa;Password=Sql_Srvr_pwd22;Encrypt=false;TrustServerCertificate=True", x => x.MigrationsHistoryTable("Migrations", "construcciones_xyz"));
@@ -34,6 +36,8 @@ public partial class ConstructionContext : DbContext
       entity.Property(e => e.Cost).IsRequired().HasColumnType("decimal(12, 2)");
 
       entity.Property(e => e.State).IsRequired().HasColumnType("int");
+
+      entity.Property(e => e.IsArchived).IsRequired().HasColumnType("bit");
 
       entity.HasOne(d => d.ProjectType)
         .WithMany(p => p.Projects)

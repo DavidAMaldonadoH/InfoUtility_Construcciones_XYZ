@@ -12,10 +12,7 @@ public class ApiResponseService(ConstructionContext context) : Controller
         if (Request.Path.Value == null)
             return StatusCode(status, res);
 
-        if (!Request.Path.Value.Contains("health") && !Request.Path.Value.Contains("KeepAlive"))
-            Console.WriteLine($"Status: {status}, Path: {Request.Path.Value}");
-        else
-            Console.WriteLine($"Status: {status}, Path: {Request.Path.Value}");
+        Console.WriteLine($"Status: {status}, Path: {Request.Path.Value}");
 
         return StatusCode(status, res);
     }

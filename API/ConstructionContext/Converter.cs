@@ -42,6 +42,7 @@ public static class Converter
             Cost = project.Cost,
             State = project.State,
             EngineerId = project.EngineerId,
+            IsArchived = project.IsArchived,
             ProjectType = project.ProjectType != null ? project.ProjectType.ToApi() : null,
             ProjectState = project.ProjectState != null ? project.ProjectState.ToApi() : null,
             Engineer = project.Engineer != null ? project.Engineer.ToApi() : null
